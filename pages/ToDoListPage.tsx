@@ -1,13 +1,15 @@
-import { Header } from "../components/Header/Header"
-import { Form } from "../components/form/Form"
+import React from "react"
+import { Form } from "react-router-dom"
+// import { Header } from "../components/Header/Header"
+// import { Form } from "../components/form/Form"
 
-export const ToDoList = ( ) => {
+export const ToDoList = () => {
     return (
         <>
 
-    <Header />
-    <Form />
-    <ToDoList />
+            {/* <Header /> */}
+            <Form />
+            <ToDoList />
         </>
     )
 }
