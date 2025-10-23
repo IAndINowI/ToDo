@@ -2,6 +2,7 @@ import { ToDoListItem } from "./ToDoListItem/ToDoListItem"
 import './ToDoList.scss'
 import { ToDo } from "../../modules/todo-item"
 
+
 export const ToDoList = (props: {todos: ToDo[], updateToDo: Function, deleteToDo: Function}) => {
 
     const checkedList = () => {
