@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Theme } from '../../modules/theme'
 
-export const FormWrapper = styled.div`
+export const FormWrapper = styled.div<{ theme: Theme }>`
     width: 100%;
     height: 80px;
 
@@ -8,7 +9,8 @@ export const FormWrapper = styled.div`
     padding: 15px;
     z-index: 5;
 
-    background-color: #4682b4;
+    transition: background-color .2x;
+    background-color: ${({ theme }) => theme.colors.backgroundPrimary};
     box-shadow: 0 2px 4px rgba(44, 62, 80, 0.15);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -34,10 +36,10 @@ export const FormField = styled.input`
     outline: none;
 
     `
-export const FormControl = styled.button<{icon: string}>`
+export const FormControl = styled.button<{$icon: string}>`
     width: 50px;
     height: 50px;
-    background: transparent url(${(props)=>props.icon}) no-repeat center/cover;
+    background: transparent url(${(props)=>props.$icon}) no-repeat center/cover;
     position: absolute;
     top: 15px;
     right: 15px;

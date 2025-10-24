@@ -1,5 +1,4 @@
 import { ToDo } from "../../modules/todo-item"
-// import classes from './ListItem.module.scss'
 import { ListItemLink } from "./ListItem.styled"
 
 export const ListItem = ({ todo }: { todo: ToDo }) => {

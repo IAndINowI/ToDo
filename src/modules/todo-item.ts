@@ -1,6 +1,6 @@
 export interface ToDo {
-    ListItemDoneLink?: string;
-    id: number,
+    // ListItemDoneLink?: string;
+    id: string,
     text: string,
     isDone: boolean
 }

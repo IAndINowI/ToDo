@@ -1,21 +1,20 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import todoReducer from './feature/todoList'
-// import userReducer from './feature/userSlice'
-// import cartReducer from './feature/cartSlice'
+import themeReducer from './feature/themeList'
 import { loadFromLocalStorage, saveToLocalStorage } from './helpers/storage'
 
+// Комбинируем редюсеры
 const rootReducer = combineReducers({
-  todoList: todoReducer,
-  // user: userReducer,
-  // cart: cartReducer,
+  todoList: todoReducer,    
+  themeList: themeReducer
 })
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: rootReducer,    
   preloadedState: loadFromLocalStorage()
 })
 
 store.subscribe(() => saveToLocalStorage(store.getState()))
 
-export type RootState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof store.getState> 
 export type AppDispatch = typeof store.dispatch
